@@ -11,7 +11,10 @@ fn main() {
     //    let width = message.chars().count();
     //    let mut writer = BufWriter::new(stdout.lock());
     //    say(message.as_bytes(), width, &mut writer).unwrap();
-    guess_game()
+    tup();
+    guess_game();
+    shadow_variable();
+    shadow_variable_usage();
 }
 
 fn guess_game() {
@@ -41,4 +44,37 @@ fn guess_game() {
             }
         }
     }
+}
+
+fn shadow_variable() {
+    let x = 5;
+    let x = x * 5;
+    let x = x + 5;
+    println!("{}", x);
+    let x = 12;
+    println!("{}", x);
+}
+
+fn shadow_variable_usage() {
+    let spaces = "     ";
+    let spaces = spaces.len();
+    println!("Length of spaces is {}", spaces);
+}
+
+fn tup() {
+    let tuple = (10, 12.3, 45);
+    let (x, _, y) = tuple;
+    println!(
+        "{} and {} are from tuples, and using dot operator {}",
+        x, y, tuple.1
+    );
+    let floater = tuple.1.to_string();
+    logger("some values are ", &floater);
+    println!("After change value is {}", floater);
+}
+
+fn logger(message: &str, value: &str) {
+    println!("{}: {}", message, value);
+    let value = String::from("Hello");
+    println!("String value is {}", value);
 }
