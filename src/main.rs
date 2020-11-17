@@ -11,6 +11,9 @@ fn main() {
     //    let width = message.chars().count();
     //    let mut writer = BufWriter::new(stdout.lock());
     //    say(message.as_bytes(), width, &mut writer).unwrap();
+    while_loop();
+    let result = increment_one(5);
+    println!("Result is {}", result);
     tup();
     guess_game();
     shadow_variable();
@@ -77,4 +80,18 @@ fn logger(message: &str, value: &str) {
     println!("{}: {}", message, value);
     let value = String::from("Hello");
     println!("String value is {}", value);
+}
+
+fn increment_one(x: i32) -> i32 {
+    println!("Incrementing the value {} by one", x);
+    x + 1
+}
+
+fn while_loop() {
+    let mut times = 10;
+    while times > 0 {
+        println!("{}!", times);
+        times -= 1;
+    }
+    println!("LiftOff!");
 }
