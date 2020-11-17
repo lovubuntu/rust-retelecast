@@ -11,6 +11,7 @@ fn main() {
     //    let width = message.chars().count();
     //    let mut writer = BufWriter::new(stdout.lock());
     //    say(message.as_bytes(), width, &mut writer).unwrap();
+    retelecast::eat_at_restaurant();
     while_loop();
     let result = increment_one(5);
     println!("Result is {}", result);

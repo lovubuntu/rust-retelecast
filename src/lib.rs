@@ -1,4 +1,4 @@
-mod back_of_house {
+pub mod back_of_house {
     #[derive(Debug)]
     pub struct Breakfast {
         pub bread: String,
@@ -19,7 +19,7 @@ mod back_of_house {
     }
 }
 
-fn eat_at_restaurant() {
+pub fn eat_at_restaurant() {
     let order = back_of_house::Breakfast::summer(String::from("wheat"));
     println!("Result is {:?}", order);
     impl back_of_house::Appetizer {
